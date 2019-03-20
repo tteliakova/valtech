@@ -1,0 +1,475 @@
+/*
+* @subpackage _variables.css
+  @subpackage _normalize.css
+  @subpackage _navbar.css
+*/
+
+@import "_variables.scss";
+@import "_normalize.scss";
+@import "_navbar.scss";
+
+// Fonts
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Abel');
+
+/*
+*  @section  Main Styles
+*/
+body {
+    color: $default;
+    font: 400 16px/24px $default-font;
+    background: #fff;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Abel', sans-serif;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 30px;
+
+    @media screen and (min-width: $screen-md-min) {
+        font-size: 58px;
+    }
+}
+
+h2 {
+    font-size: 28px;
+    color: $default;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+p {
+    line-height: 1.2;
+}
+
+a {
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .3s ease;
+
+    @media (hover: hover) {
+
+        &:active,
+        &:hover {
+            color: $primary;
+            background-color: transparent;
+        }
+    }
+
+}
+
+[class*='fa-'] {
+    &:before {
+        font-weight: 400;
+        font-family: 'Font Awesome 5 Brands';
+    }
+}
+
+.page {
+    overflow: hidden;
+    min-height: 500px;
+
+    .lt-ie9 & {
+        min-width: 1200px;
+    }
+
+    text-align: center;
+
+    @media (min-width: $screen-md-min) {
+        text-align: left;
+    }
+}
+
+/*
+*  @section  Main Layout
+*/
+
+h1+.text-lg {
+    margin-top: 3.6rem;
+
+}
+
+.text-lg+.btn {
+    margin-top: 40px;
+
+    @media (min-width: $screen-md-min) {
+        margin-top: 112px;
+    }
+}
+
+.menu {
+    .luxbar-item+.luxbar-item {
+        margin-top: 25px;
+
+        @media screen and(min-width: $screen-lg-min) {
+            margin-top: 0;
+            margin-left: 11px;
+        }
+    }
+
+}
+
+/*
+*  @section     Components
+*/
+.container {
+    margin: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    // max-width: 1230px;
+}
+
+
+/*------------------------------ OFFSETS -------------------------------*/
+.offset-1 {
+    margin-top: 30px;
+
+    @media screen and(min-width: $screen-sm-min) {
+        margin-top: 0;
+    }
+}
+
+/*------------------------------ HELPERS -------------------------------*/
+.text {
+    &-lg {
+        font-size: 21px;
+        line-height: 1.85;
+        text-align: justify;
+
+        @media (min-width: $screen-md-min) {
+            font-size: 32px;
+            text-align: center;
+        }
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.small {
+    font-size: 14px;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &-sm {
+        @media screen and(min-width: $screen-sm-min) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+    }
+}
+
+.logo-link {
+    path {
+        transition: .4s all;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            path {
+                transition: .4s all;
+                fill: $default;
+            }
+        }
+    }
+
+}
+
+object {
+    pointer-events: none;
+    cursor: pointer;
+}
+
+a>object {
+    cursor: pointer;
+}
+
+/*
+*  @subsection   Backgrounds
+*/
+
+.bg-primary {
+    background: $primary;
+}
+
+/*
+*  @subsection   Buttons
+*/
+
+.btn {
+    font: 400 16px $default-font;
+    position: relative;
+    display: inline-block;
+    border-radius: $border-radius-large;
+    transition: .4s all;
+
+    &-primary {
+        color: #fff;
+        background: $primary;
+
+        @media (hover: hover) {
+            &:hover {
+                background: #0798c0;
+            }
+        }
+
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+        0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    &-md {
+        font-size: 28px;
+        padding: 13px 58px;
+    }
+}
+
+/*
+*  @subsection   Icons
+*/
+
+
+.icon {
+    transition: .3s all linear;
+
+    &-md {
+        font-size: 24px;
+    }
+
+    &-default {
+        color: #B2B2B2;
+
+        @media (hover: hover) {
+            &:hover {
+                color: $default;
+            }
+        }
+    }
+}
+
+/*
+*  @subsection  Inline-List
+*/
+
+.inline-list {
+    display: inline-block;
+
+    li {
+        display: inline-block;
+    }
+
+    li+li {
+        padding-left: 35px;
+    }
+}
+
+
+/*
+*  @subsection  Flex-List
+*/
+.flex-list {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    display: flex;
+
+    li {
+        flex: 1 0 25%;
+        margin: 45px 15px 0;
+
+        @media screen and(min-width: $screen-lg-min) {
+            margin: 45px 0 0;
+        }
+    }
+}
+
+
+/*
+*  @section   HEADER
+*/
+.header {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    background: #ffffffeb;
+}
+
+.isStuck {
+    position: fixed;
+    left: 0px;
+    width: 100%;
+    box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.25);
+
+    .luxbar-menu {
+        padding: 10px 5px;
+    }
+}
+
+.section-header {
+    color: #C2C2C2;
+    text-transform: uppercase;
+    position: relative;
+
+    span {
+        position: absolute;
+        top: 50%;
+        left: 20.7%;
+        padding: 0 22px 0 16px;
+        transform: translateY(-50%);
+        background: #fff;
+    }
+
+    &:after {
+        position: absolute;
+        content: '';
+        top: 50%;
+        left: 0;
+        display: inline-block;
+        height: 1px;
+        width: 100%;
+        transform: translateY(-50%);
+        z-index: -1;
+
+        background: #C2C2C2;
+    }
+}
+
+/*----------------- CONTENT -----------------*/
+.box {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &_img {
+        text-align: center;
+        margin: auto;
+    }
+
+    &_cnt {
+        color: #B2B2B2;
+        margin: auto;
+    }
+
+    &-sm {
+        margin-top: 59px;
+        flex: 1 0 51%;
+        min-width: 120px;
+
+        .box_img {
+            min-width: 100px;
+        }
+
+        .box_cnt {
+            @media screen and(min-width: $screen-md-min) {
+                margin-left: 36px;
+            }
+
+            h2+p {
+                margin-top: 20px;
+            }
+        }
+
+        @media screen and(min-width: $screen-xs-min) {
+            flex: 1 0 33.3333%;
+        }
+    }
+
+    &-md {
+        margin-top: 40px;
+
+        .box_img {
+            min-width: 80px;
+        }
+
+        .box_cnt {
+            max-width: 280px;
+            margin-left: 0;
+
+            p {
+                line-height: 1.6;
+            }
+
+            h2+p {
+                margin-top: 20px;
+            }
+        }
+
+        @media screen and(min-width: $screen-md-min) {
+            .box_cnt {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+a.box {
+    @media (hover: hover) {
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+}
+
+/*
+*  @subsection  Well
+*/
+
+.well {
+    padding-top: 75px;
+    padding-bottom: 45px;
+
+    @media screen and(min-width: $screen-md-min) {
+        padding-top: 145px;
+        padding-bottom: 95px;
+    }
+
+    @media screen and(min-width: $screen-lg-min) {
+        padding-top: 235px;
+    }
+
+    &-md {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+}
+
+/*
+*  @section    FOOTER
+*/
+footer {
+    color: $default;
+    background: #F7F7F7;
+    font-size: 24px;
+
+    padding: 20px 0;
+}

@@ -1,0 +1,25 @@
+.menu {
+    display: flex;
+    align-items: center;
+
+    li {
+        @media screen and(min-width: $screen-sm-min) {
+            height: auto;
+        }
+    }
+
+    li>a {
+        color: $default;
+        transition: .3s all;
+        padding: 1px 15px;
+        background: transparent;
+        border-radius: $border-radius-base;
+
+        @media (hover: hover) {
+            &:hover {
+                color: #fff;
+                background: $primary;
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+.luxbar-fixed {
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: $luxbar-shadow;
+  @media (min-width: 1200px) {
+    position: absolute;
+  }
+}

@@ -1,0 +1,21 @@
+/******* color variables *******/
+$light-bg: #ffffff00;
+$light-hl: #bdbdbd;
+$light-fg: #212121;
+
+/******* default light *******/
+.luxbar-menu-light,
+.luxbar-menu-light .dropdown ul {
+    background-color: $light-bg;
+    color: $light-fg;
+}
+
+.luxbar-menu-light {
+    .luxbar-hamburger {
+        span,
+        span::before,
+        span::after {
+            background-color: $light-fg;
+        }
+    }
+}
